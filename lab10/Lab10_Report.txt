@@ -1,0 +1,35 @@
+
+======================================================
+COE67-222 Operating Systems - Lab 10 Report (Final)
+
+Name: [ภูวนนท์ หะยะมิน]
+Student ID: [67130443]
+======================================================
+
+1. The Role of the Operating System
+In this mini-project, our Python script simulated the major responsibilities of an Operating System. 
+Match the specific code behavior in `ultimate_cluster_os.py` to the corresponding OS concept you learned throughout the semester:
+
+- File System & Permissions (Lab 9):
+The code uses os.path.exists() to check if a file exists. Workload D failed because the file secret_keys.txt was not found.
+
+- Memory Management (Labs 5/6):
+The while loop checks if there is enough RAM. If RAM is not enough, the job waits until RAM is available. This helps prevent memory problems.
+
+- Concurrency & Deadlocks (Labs 3/4):
+The code sorts the GPU numbers before using them. This helps prevent deadlocks because all jobs request GPUs in the same order.
+
+2. Hardware Utilization
+
+Look at the output of your Live Dashboard. Explain how the OS successfully ran Workload A (LLaMA Training), Workload B (Preprocessing), and Workload C (Inference) AT THE SAME TIME without crashing. Why didn't they block each other?
+
+Ans
+Workload A uses 40 GB of RAM and GPUs 0, 1, and 2. Workload B uses 16 GB of RAM and the CPU. Workload C uses 2 GB of RAM and GPU 3. They can run at the same time because they use different resources. The system checks RAM before running each job, so it does not use more RAM than it has.
+
+3. Course Reflection (AI Engineering Context)
+
+You are now applying for a role as a Machine Learning Operations (MLOps) Engineer. 
+Write a short paragraph explaining how understanding Operating Systems (Process queues, RAM/Virtual Memory limits, Deadlock avoidance, File systems) gives you an advantage over a programmer who only knows how to write basic Python/PyTorch scripts.
+
+Ans
+Learning about Operating Systems helps me understand how to manage AI programs. Process queues help organize jobs. RAM management helps prevent memory problems. Deadlock avoidance helps jobs run safely. File system checks help protect files. These skills are useful when running many AI programs on a server.
