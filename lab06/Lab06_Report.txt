@@ -1,0 +1,30 @@
+
+======================================================
+COE67-222 Operating Systems - Lab 06 Report
+
+Name: [ภูวนนท์ หะยะมิน]
+Student ID: [67130443]
+======================================================
+
+1. FIFO vs LRU (Phase 2):
+
+In the `page_replacement.py` script, why did the LRU algorithm perform better (have fewer page faults) than the FIFO algorithm for the given reference string? Explain how LRU decides which page to evict.
+
+Ans
+LRU works better than FIFO because it checks which page was used recently. LRU removes the page that has not been used for the longest time, while FIFO removes the page that came into memory first. In this example, FIFO has 9 page faults, but LRU has only 7.
+
+
+2. Understanding Thrashing (Phase 3):
+
+Based on your observation of `ai_thrashing.py`, define "Thrashing" in your own words. Why is the processing time significantly higher in Scenario 2?
+
+Ans
+Thrashing happens when the computer spends too much time moving data between RAM and disk instead of doing the actual work. Scenario 2 takes longer because reading and writing data on disk is slower than using RAM.
+
+
+3. AI Engineering Decision:
+
+If you are training an AI model and your system begins to thrash because the RAM is full, lowering the `batch_size` in your Python code is a common solution. How does lowering the `batch_size` help the Operating System resolve the Thrashing problem?
+
+Ans
+Lowering the batch_size means the computer processes fewer data at one time. This helps reduce memory usage and gives the system more free RAM. Because of this, the system may not need to move data between RAM and disk as often, which helps reduce thrashing.
